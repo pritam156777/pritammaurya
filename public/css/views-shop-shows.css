@@ -1,0 +1,129 @@
+/* ================================
+   EXPLORE TRENDING TOPICS PAGE
+   ================================ */
+
+/* Page Wrapper */
+.explore-wrapper {
+    max-width: 1600px;
+    margin: auto;
+    padding: 40px 20px 100px;
+}
+
+/* Title */
+.explore-title {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 36px;
+    color: #111;
+    text-align: center;
+    background: linear-gradient(90deg, #43cea2, #6dd5ed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* AUTO RESPONSIVE GRID */
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+.topic-card {
+    position: relative;
+    height: 160px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    text-decoration: none;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover lift */
+.topic-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+
+/* Image */
+.topic-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+/* Image zoom on hover */
+.topic-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay */
+.topic-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.15)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+/* Text */
+.topic-overlay span {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+}
+
+/* Buttons Container */
+.explore-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Button Styling */
+.btn-explore {
+    position: relative;
+    padding: 8px 36px;
+    font-size: 14px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(120deg, #43cea2, #047e8a, #6dd5ed);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-explore::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, #6dd5ed, #047e8a, #43cea2);
+    opacity: 0;
+    border-radius: 14px;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+}
+
+.btn-explore:hover::after {
+    opacity: 1;
+}
+
+.btn-explore span {
+    position: relative;
+    z-index: 1;
+}

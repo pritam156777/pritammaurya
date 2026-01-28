@@ -1,0 +1,130 @@
+/* General Body & Font */
+body {
+    font-family: 'Figtree', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Full page background image */
+    background: url('/images/login-image/login-page-1.png') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+/* Optional overlay for readability */
+body::before {
+    content: '';
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    z-index: 0;
+}
+
+/* Auth Card */
+.auth-card {
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 50px 35px;
+    width: 100%;
+    max-width: 450px;
+    background: linear-gradient(135deg, rgb(217 217 117 / 50%), /* light yellow */ rgb(227 92 92), /* pastel blue */ rgb(245 169 82) /* soft pink */);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Auth Title */
+.auth-title {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #ff7d7d, #6715cd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #4dadff00;
+}
+
+/* Input Fields */
+input[type="text"], input[type="email"], input[type="password"] {
+    border: none;
+    border-radius: 15px;
+    padding: 14px 18px;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 6px 18px rgba(37,117,252,0.6);
+    background: rgba(255,255,255,0.3);
+}
+
+/* Buttons */
+.auth-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.auth-btn:hover {
+    background: linear-gradient(90deg, #6a11cb, #ff6a00);
+    transform: scale(1.05);
+}
+
+/* Links */
+.auth-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.auth-link:hover {
+    color: #ffcc00;
+}
+
+/* Checkbox label */
+label.flex.items-center.text-white.text-sm input[type="checkbox"] {
+    accent-color: #2575fc;
+}
+
+/* Status Message */
+div.mb-4 {
+    font-weight: 500;
+    border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .auth-card {
+        padding: 35px 25px;
+    }
+    .auth-title {
+        font-size: 1.7rem;
+    }
+}

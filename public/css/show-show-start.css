@@ -1,0 +1,627 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* WRAPPER */
+.product-wrapper {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+/* IMAGE CARD */
+.product-image {
+    position: relative;
+    border-radius: 32px;
+    overflow: hidden;
+}
+
+
+
+/* NEW BADGE */
+.badge-new {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #facc15;
+    color: #000;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 999px;
+    z-index: 2;
+}
+
+/* DETAILS */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-title {
+    font-size: 42px;
+    font-weight: 900;
+    color: #111827;
+    line-height: 1.2;
+}
+
+.product-category {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.product-description {
+    margin-top: 25px;
+    font-size: 16px;
+    color: #4b5563;
+    line-height: 1.7;
+    max-width: 520px;
+}
+
+/* PRICE */
+.price-section {
+    margin-top: 35px;
+}
+
+.price-label {
+    font-size: 13px;
+    color: #6b7280;
+    display: block;
+}
+
+.price-amount {
+    font-size: 40px;
+    font-weight: 900;
+    color: #111827;
+}
+
+/* BUTTONS */
+.action-buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+.btn-primary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 40px;
+    border-radius: 18px;
+
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+
+    color: #fff;
+    text-decoration: none;
+    font: caption;
+    /* 🔥 Dual Color Gradient */
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+
+
+
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+/* ✨ Light Shine */
+.btn-primary::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255,255,255,0.35) 50%,
+        transparent 70%
+    );
+    transform: rotate(25deg);
+    transition: all 0.6s ease;
+}
+
+/* 🚀 Hover */
+.btn-primary:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow:0 2px 4px rgba(0, 168, 185, 0.12)
+
+}
+
+.btn-primary:hover::before {
+    left: 120%;
+}
+
+/* 🧲 Active */
+.btn-primary:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+
+@media (max-width: 500px) {
+    .btn-primary {
+        font-size: 14px !important;
+        height: 34px;
+        width: 215px;
+        border-radius: 12px;
+    }
+
+    .btn-secondary {
+        font-size: 14px;
+        height: 34px;
+        width: 215px;
+        border-radius: 12px;
+
+        /* Different awesome color */
+        background: linear-gradient(
+            135deg,
+            #f97316,
+            #facc15
+        );
+
+        color: #ffffff;
+
+        box-shadow:
+            0 8px 18px rgba(249, 115, 22, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+}
+@media (max-width: 500px) {
+    .btn-secondary:hover {
+        transform: translateY(-2px);
+        box-shadow:
+            0 12px 22px rgba(249, 115, 22, 0.5);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .product-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+
+    .product-title {
+        font-size: 34px;
+    }
+}
+
+.btn-secondary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 15px 34px;
+    border-radius: 18px;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+
+    color: #1f2937;
+    text-decoration: none;
+
+    /* 🌈 Soft dual-color gradient */
+    background: linear-gradient(135deg, #fdfcfb, #e7eef3);
+
+    /* ✨ Premium soft shadow */
+    box-shadow:
+        0 4px 8px rgba(148, 163, 184, 0.15),
+        0 10px 22px rgba(148, 163, 184, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+/* Arrow animation */
+.btn-secondary::after {
+    content: "←";
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #ffffff, #dde6ee);
+    box-shadow:
+        0 10px 20px rgba(148, 163, 184, 0.25),
+        0 20px 40px rgba(148, 163, 184, 0.25);
+}
+
+/* Arrow slide on hover */
+.btn-secondary:hover::after {
+    transform: translateX(-6px);
+}
+
+/* Active press */
+.btn-secondary:active {
+    transform: translateY(-1px) scale(0.97);
+}
+
+/* ===============================
+   RELATED PRODUCTS SECTION
+================================ */
+
+.related-wrapper {
+    margin-top: 120px;
+}
+
+.related-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #111827;
+    margin-bottom: 50px;
+}
+
+/* GRID */
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.related-card {
+    background: linear-gradient(180deg, #ffffff, #f9fafb);
+    border-radius: 26px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0px 11px rgba(0, 0, 0, 0.08), 0 0 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.related-card:hover {
+    transition: box-shadow 0.8s ease, transform 0.6s ease;
+    box-shadow:
+        0 -1px 4px rgba(52,211,153,.18),
+        2px 0 5px rgba(16,185,129,.18),
+        0 3px 8px rgba(22,163,74,.18),
+        -2px 0 5px rgba(134,239,172,.18);
+
+    /*    0 -1px 4px rgba(253,186,116,.18),
+        2px 0 5px rgba(251,146,60,.18),
+        0 3px 8px rgba(251,113,133,.18),
+        -2px 0 5px rgba(254,215,170,.18);*/
+
+}
+
+/* IMAGE */
+.related-actions {
+    display: flex;
+    gap: 12px;
+   margin: 0 0 2pc 0;
+}
+
+/*complete css for show.blade.php css start++++ */
+
+.make-payment-btn {
+    position: relative;
+    flex: 1;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 0;
+    border-radius: 14px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    color: #fff;
+    text-decoration: none;
+
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+
+    box-shadow:
+        0 10px 20px rgba(99, 102, 241, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.make-payment-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 0;
+    height: 0;
+
+    background: rgba(255, 255, 255, 0.35);
+    border-bottom-left-radius: 10px;
+
+    transition: all 0.35s ease;
+}
+
+
+
+.make-payment-btn:hover::after {
+    width: 26px;
+    height: 26px;
+}
+
+
+.show-product-details {
+    position: relative;
+    flex: 1;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 0;
+    border-radius: 14px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    color: #fff;
+    text-decoration: none;
+
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+
+    box-shadow:
+        0 10px 20px rgba(34, 197, 94, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.show-product-details::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 0;
+    height: 0;
+
+    background: rgba(255, 255, 255, 0.35);
+    border-bottom-left-radius: 10px;
+
+    transition: all 0.35s ease;
+}
+
+
+
+.show-product-details:hover::after {
+    width: 26px;
+    height: 26px;
+}
+
+
+/*complete css for show.blade.php css end++++ */
+
+
+
+
+
+.related-card a{
+    color: #ffffff !important;
+}
+
+/* folded corner */
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .related-title {
+        font-size: 28px;
+    }
+
+    .related-image img {
+        height: 200px;
+    }
+}
+
+/* =============================== */
+/* PRODUCT WRAPPER - RESPONSIVE */
+/* =============================== */
+.product-wrapper {
+    position: relative;
+    padding: clamp(14px, 2.5vw, 24px);
+    border-radius: clamp(16px, 2vw, 22px);
+
+    /* Light animated multi-color gradient border */
+    background:
+        linear-gradient(#ffffff, #ffffff) padding-box,
+        linear-gradient(
+            120deg,
+            #c7d2fe,
+            #bae6fd,
+            #fbcfe8,
+            #bbf7d0,
+            #e9d5ff
+        ) border-box;
+    background-size: 300% 300%;
+    border: 2px solid transparent;
+
+    box-shadow:
+        0 10px 26px rgba(0, 0, 0, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+
+    animation: luxuryBorderSlide 12s ease-in-out infinite;
+    transition: transform 0.4s ease;
+}
+
+.product-wrapper:hover {
+    transform: translateY(-5px);
+}
+
+/* Animation: slow luxury gradient shift */
+@keyframes luxuryBorderSlide {
+    0% { background-position: 100% 50%; }
+    40% { background-position: 0% 50%; }
+    60% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* =============================== */
+/* PRIMARY BUTTON */
+/* =============================== */
+.btn-primary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 14px 32px;
+    border-radius: 16px;
+
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    box-shadow:
+        0 10px 22px rgba(99, 102, 241, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 16px 30px rgba(99, 102, 241, 0.45);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px) scale(0.97);
+}
+
+/* =============================== */
+/* SECONDARY BUTTON */
+/* =============================== */
+.btn-secondary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+
+    padding: 14px 32px;
+    border-radius: 16px;
+
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    color: #1f2937;
+
+    background: linear-gradient(135deg, #fdfcfb, #e7eef3);
+    box-shadow:
+        0 4px 8px rgba(148, 163, 184, 0.15),
+        0 10px 22px rgba(148, 163, 184, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+/* Arrow animation */
+.btn-secondary::after {
+    content: "←";
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #ffffff, #dde6ee);
+    box-shadow:
+        0 10px 20px rgba(148, 163, 184, 0.25),
+        0 20px 40px rgba(148, 163, 184, 0.25);
+}
+
+.btn-secondary:hover::after {
+    transform: translateX(-6px);
+}
+
+.btn-secondary:active {
+    transform: translateY(-1px) scale(0.97);
+}
+
+/* =============================== */
+/* RESPONSIVE STYLES */
+/* =============================== */
+@media (max-width: 900px) {
+    .product-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+
+    .product-title {
+        font-size: 28px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 13px;
+        border-radius: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .btn-primary,
+    .btn-secondary {
+        font-size: 12px !important;
+        padding: 10px 0;
+        border-radius: 12px;
+    }
+
+    .btn-secondary {
+        background: linear-gradient(135deg, #f97316, #facc15);
+        color: #fffdfd;
+        box-shadow: 0 8px 18px rgba(249, 115, 22, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    .btn-secondary:hover {
+        transform: translateY(-2px);
+        color: #fff9f9;
+        background: linear-gradient(135deg, #f97316, #facc15);
+
+    }
+
+}
+
+@media (max-width: 360px) {
+    .btn-primary,
+    .btn-secondary {
+        font-size: 11px !important;
+        padding: 8px 0;
+        border-radius: 10px;
+    }
+}
+

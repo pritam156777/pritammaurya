@@ -1,0 +1,74 @@
+/* ===============================
+   NAV BUTTON BASE
+================================ */
+.nav-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    background: transparent;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    backdrop-filter: blur(10px);
+    transition: all 0.35s ease;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+/* ===============================
+   ARROW ICON (PURE CSS)
+================================ */
+.arrow {
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+    transition: all 0.35s ease;
+}
+
+.arrow.left {
+    transform: rotate(-135deg);
+}
+
+.arrow.right {
+    transform: rotate(45deg);
+}
+
+/* ===============================
+   HOVER EFFECT
+================================ */
+.nav-btn:hover {
+    transform: scale(1.15);
+    border-color: #ffffff;
+}
+
+
+.nav-btn:hover .arrow {
+    border-color: #ffffff;
+}
+
+/* ===============================
+   CLICK FEEDBACK
+================================ */
+.nav-btn:active {
+    transform: scale(0.9);
+}
+
+.max-h-full{
+    height: 150px !important;
+    width: 150px !important;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* slide half of content width */
+}
+.animate-slide {
+    animation: slide 20s linear infinite;
+}
+#imageSlider img{
+    width: 52pc !important;
+}
